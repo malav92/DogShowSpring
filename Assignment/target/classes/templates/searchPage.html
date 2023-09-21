@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Dog</title>
+<link rel="stylesheet" type="text/css" th:href="@{/form.css}">
+</head>
+<body>
+
+<div id="webpage" align="center">
+
+<div id="header">
+<img th:src="@{paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<img th:src="@{paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<a href="/">
+<img th:src="@{Dog.png}" src="Dog.png" width="600px" height="165px" align="left"/>
+</a>
+
+<ul style="padding-left:140px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="@{/hanlerPage}">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Login For Handler"> </li>
+</form>
+</li>
+</ul>
+
+<br>
+
+<ul style="padding-left:120px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="doghandlerreg">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Dog Handler registartion"> </li>
+</form>
+</li>
+</ul>
+
+<br><br><br><br>
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li>
+<form action="displayindi" method="get">
+<li><input type="submit" value ="Shows Days"> </li>
+</form>
+</li>
+
+<li><form th:action="@{/addDog}">
+<li><input type="submit" value ="Add Dogs"> </li>
+</form>
+</li>
+
+<li><form action="aboutus">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="contactus">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+
+<div id="content">
+<h1><font color="white">Search By Categories</font></h1>
+<table>
+
+<tr>
+<td>
+
+<form action="searchByNumber">
+<input type="text" name="searchByNumber">
+   <input type="submit" value ="Search by entry number">
+   </form>
+   </td>
+   <td>
+<form action="searchByName">
+   <input type="text" name="searchByName">
+   <input type="submit" value ="Search by Dog Name">
+   </form>
+</td>
+</tr>
+
+<tr>
+<td>
+<form action="searchByOwner">
+<input type="text" name="searchByOwner">
+   <input type="submit" value ="Search by Owner name">
+   </form>
+   </td>
+   
+   <td>
+<form action="searchByBreed">
+<input type="text" name="searchByBreed">
+   <input type="submit" value ="Search by Dog Breed">
+   </form>
+   </td>
+</tr>
+
+  <tr>
+  <td>
+  <li>
+  <form action="searchByGroup">
+   <font color="red">Select Group</font> 
+<select name="group" size="1">
+
+<option value="SportingDogs"> Sporting Dogs </option>
+
+<option value="hounds"> Hounds  </option>
+
+<option value="WorkingDogs"> Working Dogs </option>
+
+<option value="Terriers"> Terriers </option>
+
+<option value="Toys"> Toys </option>
+
+<option value="Non-Sporting"> Non-Sporting </option>
+
+<option value="Herding"> Herding </option>
+</select>
+<input type="submit" value ="Serach By Group">
+</form>
+</li>
+</td> 
+  </tr>
+  
+</table>
+</div>
+</div>
+<h4> <font color="white"> CopyRight @Malav Jani & Rutul Patel</h4>
+</body>
+</html>

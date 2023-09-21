@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+ <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta charset="ISO-8859-1">
+<title>Add Dog</title>
+<link rel="stylesheet" type="text/css" th:href="@{/form.css}" href="form.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('form[name="frmSave"]').submit(function(){
+		if ($('input:checkbox').filter(':checked').length < 1){
+        alert("Check at least one day for dogshow!");
+		return false;
+		}
+    });
+});
+</script>
+
+<style>
+.gtext {
+    color: white;
+    font-size: 110%;
+}
+.g {
+    color: white;
+    text-shadow: 2px 2px 5px blue;
+    font-size: 140%;
+}
+.gtext2 {
+    color:#FFFAFA;
+    text-shadow: 2px 2px 5px #800080;
+    font-size: 150%;
+}
+</style>
+</head>
+
+<body>
+<div id="webpage" align="center">
+
+<div id="header">
+<img th:src="@{/paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<img th:src="@{/paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<a href="/">
+<img th:src="@{/Dog.png}" src="Dog.png" width="600px" height="165px" align="left"/>
+</a>
+
+<ul style="padding-left:140px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="@{/hanlerPage}">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Login For Handler"> </li>
+</form>
+</li>
+</ul>
+
+<br>
+
+<ul style="padding-left:120px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="doghandlerreg">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Dog Handler registartion"> </li>
+</form>
+</li>
+</ul>
+
+<br><br><br><br>
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li>
+<form action="displayindi" method="get">
+<li><input type="submit" value ="Shows Days"> </li>
+</form>
+</li>
+
+<li><form th:action="@{/addDog}">
+<li><input type="submit" value ="Add Dogs"> </li>
+</form>
+</li>
+
+<li><form action="aboutus">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="contactus">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+<br><br><br>
+<div id="content">
+
+<h2> <font color="white">Modify New Dog </font> </h2>
+
+<form action="/modify" method='get' name="frmSave"> 
+
+<TABLE BORDER="1">
+<tr>
+<td> 
+<input type="hidden" name="EntryNumber" th:value="${dogList.EntryNumber}">
+</td>
+</tr>
+
+<tr>
+<td> <font color="white"> Dog Name: </font> </td>
+<td>
+<input type="text" name="dogName"  th:value="${dogList.dogName}">
+</td>
+</tr>
+
+<tr>
+<td> <font color="white"> Owner Name: </font> </td>
+ <td> <input type="text" name="ownerName"  th:value="${dogList.ownerName}"> </td>
+</tr>
+
+<tr>
+<td> <font color="white"> Owner Emailid </font> </td>
+ <td> <input type="text" name="owneremail"  th:value="${dogList.email}"> </td>
+</tr>
+
+<tr>
+<td> <font color="white"> Breed </font> </td>
+ <td> <input type="text" name="breed"  th:value="${dogList.breed}"> </td>
+</tr>
+
+<tr>
+<td> <font color="white">Select Group</font> </td>
+<td> 
+<select name="group" size="1"  th:value="${dogList.group}">
+
+<option value="SportingDogs"> Sporting Dogs </option>
+
+<option value="hounds"> Hounds  </option>
+
+<option value="WorkingDogs"> Working Dogs </option>
+
+<option value="Terriers"> Terriers </option>
+
+<option value="Toys"> Toys </option>
+
+<option value="Non-Sporting"> Non-Sporting </option>
+
+<option value="Herding"> Herding </option>
+</select>
+ </td>
+</tr>
+
+<tr>
+
+<td> <font color="white"> Select Gender: </font> </td>
+<td> 
+<select name="gender" size="1"  th:value="${dogList.gender}">
+
+<option value="male"> Male </option>
+
+<option value="female"> Female </option>
+
+</select>
+ </td>
+</tr>
+
+<tr>
+<td> <font color="white"> Ranking </font> </td>
+<td> 
+<select name="ranking" size="1"  th:value="${dogList.ranking}">
+
+<option value="class"> Class </option>
+
+<option value="specialty"> Specialty </option>
+
+</select>
+ </td>
+</tr>
+
+<tr>
+<td> <font color="white"> Select date for your dog</font> </td>
+<td> 
+        <input type="checkbox"  name="date" id="one" value="firday">10th Jan 2020, Friday</label>
+    <label class="checkbox">
+        <input type="checkbox" name="date" id="two" value="Saturday">11th Jan 2020, Saturday</label>
+    <label class="checkbox">
+        <input type="checkbox"  name="date" id="three" value="Sunday">12th Jan 2020, Sunday</label>
+ </td>
+</tr>
+
+<span th:text="${message}"></span>
+<span color="white" th:text="${key}">Your Unique Entry Number is: </span>
+
+<span th:text="${Error}"></span>
+
+<tr >
+<td colspan="2" align="center">
+<input type="submit" value ="Edit Record"/>
+</td>
+</tr>
+</TABLE>
+</form>
+<br>
+
+
+</center>
+</div>
+</div>
+<h4> <font color="white"> CopyRight @Malav Jani & Rutul Patel</h4>
+</body>
+</html>

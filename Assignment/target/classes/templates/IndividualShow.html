@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Dog</title>
+<link rel="stylesheet" type="text/css" href="form.css">
+
+<style>
+.gtext {
+    color: white;
+    font-size: 110%;
+}
+.g {
+    color: white;
+    text-shadow: 2px 2px 5px blue;
+    font-size: 140%;
+}
+</style>
+</head>
+<body>
+
+<div id="webpage" align="center">
+
+<div id="header">
+<img th:src="@{paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<img th:src="@{paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<a href="/">
+<img th:src="@{Dog.png}" src="Dog.png" width="600px" height="165px" align="left"/>
+</a>
+
+<ul style="padding-left:140px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="@{/hanlerPage}">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Login For Handler"> </li>
+</form>
+</li>
+</ul>
+
+<br>
+
+<ul style="padding-left:120px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="doghandlerreg">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Dog Handler registartion"> </li>
+</form>
+</li>
+</ul>
+
+<br><br><br><br>
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li>
+<form action="displayindi" method="get">
+<li><input type="submit" value ="Shows Days"> </li>
+</form>
+</li>
+
+<li><form th:action="@{/addDog}">
+<li><input type="submit" value ="Add Dogs"> </li>
+</form>
+</li>
+
+<li><form action="aboutus">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="contactus">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+
+<div id="content">
+<h1><font color="white">Select Day Here</font></h1>
+<h3><font color="white">Here you will get number of breeds falls in selected day</font></h3>
+<h3><font color="white">You will also get number of male and female dogs, and also number of speciallity dogs according to gender</font></h3>
+<table>
+
+
+  <tr>
+  <td>
+  <li>
+  <form action="GetListByDays">
+   <font color="red">Select Group</font> 
+<select name="date" size="1">
+
+<option value="firday"> Friday </option>
+
+<option value="Saturday"> Saturday </option>
+
+<option value="Sunday">Sunday </option>
+
+</select>
+<input type="submit" value ="Serach By Days">
+</form>
+</li>
+</td> 
+  </tr>
+  
+</table>
+</div>
+</div>
+<h4> <font color="white"> CopyRight @Malav Jani & Rutul Patel</h4>
+</body>
+</html>

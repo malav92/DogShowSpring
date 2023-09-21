@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+ <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta charset="ISO-8859-1">
+<title>Add Dog</title>
+<link rel="stylesheet" type="text/css" th:href="@{/form.css}" href="form.css">
+<style>
+.gtext {
+    color: white;
+    font-size: 110%;
+}
+.g {
+    color: white;
+    text-shadow: 2px 2px 5px blue;
+    font-size: 140%;
+}
+.gtext2 {
+    color:#FFFAFA;
+    text-shadow: 2px 2px 5px #800080;
+    font-size: 150%;
+}
+</style>
+</head>
+
+<body>
+<div id="webpage" align="center">
+
+<div id="header">
+<img th:src="@{/paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<img th:src="@{/paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<a href="/">
+<img th:src="@{/Dog.png}" src="Dog.png" width="600px" height="165px" align="left"/>
+</a>
+
+<ul style="padding-left:140px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="@{/hanlerPage}">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Login For Handler"> </li>
+</form>
+</li>
+</ul>
+
+<br>
+
+<ul style="padding-left:120px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="doghandlerreg">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Dog Handler registartion"> </li>
+</form>
+</li>
+</ul>
+
+<br><br><br><br>
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li>
+<form action="displayindi" method="get">
+<li><input type="submit" value ="Shows Days"> </li>
+</form>
+</li>
+
+<li><form th:action="@{/addDog}">
+<li><input type="submit" value ="Add Dogs"> </li>
+</form>
+</li>
+
+<li><form action="aboutus">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="contactus">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+<br><br><br><br><br><br>
+
+
+<div id="content">
+
+<h1> <font color="white"> Dog Details </font></h1>
+<table>
+<tr>
+<th class="g"> Entry Number </th>
+<th class="g">   Dog Name  </th>
+<th class="g">   Owner Name </th>
+<th class="g">   Owner Email </th>
+<th class="g">   Breed </th>
+<th class="g">   Dog Group  </th>
+<th class="g">   Gender  </th>
+<th class="g">   Ranking </th>
+<th class="g">   Date of Event </th>
+</tr>
+
+<font color="white"><tr th:text= "${err}"></tr></font>
+<tr class="gtext" th:each= "dog : ${dogList}">
+<td class="gtext" th:text="${dog.EntryNumber}"> </td>
+<td  class="gtext" th:text="${dog.dogName}"> </td>
+<td class="gtext" th:text="${dog.ownerName}"> </td>
+<td class="gtext" th:text="${dog.email}"> </td>
+<td  class="gtext" th:text="${dog.breed}"> </td>
+<td  class="gtext" th:text="${dog.group}"> </td>
+<td class="gtext" th:text="${dog.gender}"> </td>
+<td class="gtext" th:text="${dog.ranking}"> </td>
+<td class="gtext" th:text="${dog.date}"> </td>
+<td><a href="" th:href="@{/delete/{id}(id=${dog.entryNumber})}">DELETE</a></td>
+<td><a href="" th:href="@{/edit/{id}(id=${dog.entryNumber})}">EDIT</a></td>
+</tr>
+
+</table>
+
+</div>
+</div>
+
+</body>
+
+</html>

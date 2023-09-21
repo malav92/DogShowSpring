@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.com">
+<head>
+ <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<meta charset="ISO-8859-1">
+<title>Add Dog</title>
+<link rel="stylesheet" type="text/css" th:href="@{form.css}" href="form.css">
+
+</head>
+
+<body>
+<div id="webpage" align="center">
+
+<div id="header">
+<img th:src="@{paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<img th:src="@{paw.gif}" src="paw.gif" height="165px" width="185px" align="left"/>
+<a href="/">
+<img th:src="@{Dog.png}" src="Dog.png" width="600px" height="165px" align="left"/>
+</a>
+
+<ul style="padding-left:140px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="@{/hanlerPage}">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Login For Handler"> </li>
+</form>
+</li>
+</ul>
+
+<br>
+
+<ul style="padding-left:120px; border-radius:12px">
+<li style="background-color:#FFFAF0;border-radius:12px">
+<form th:action="doghandlerreg">
+<li style="border-radius:12px">
+<input style="background-color:#5F9EA0;border-radius:12px" type="submit" value ="Dog Handler registartion"> </li>
+</form>
+</li>
+</ul>
+
+<br><br><br><br>
+<ul>
+<li><form action="/">
+<li><input type="submit" value ="Home"> </li>
+</form>
+</li>
+
+<li><form action="randomDogs">
+<li><input type="submit" value ="Generate Random Dogs"> </li>
+</form>
+</li>
+
+<li><form action="view">
+<li><input type="submit" value ="View All Listed Dogs"></li>
+</form>
+<li>
+
+<li>
+<form action="search">
+<li><input type="submit" value ="Search By Categories"> </li>
+</form>
+</li>
+
+
+<li>
+<form action="showList" method="get">
+<li><input type="submit" value ="Show list"> </li>
+</form>
+</li>
+
+<li>
+<form action="displayindi" method="get">
+<li><input type="submit" value ="Shows Days"> </li>
+</form>
+</li>
+
+<li><form th:action="@{/addDog}">
+<li><input type="submit" value ="Add Dogs"> </li>
+</form>
+</li>
+
+<li><form action="aboutus">
+<li><input type="submit" value ="AboutUS"> </li>
+</form>
+</li>
+
+<li><form action="contactus">
+<li><input type="submit" value ="ContactUS"> </li>
+</form>
+</li>
+
+</ul>
+</div>
+<br><br>
+
+<div id="content">
+<center>
+<h1> <font color="white">Welcome to Dog Show </font> </h1>
+<p> <font color="white"><B>Here, you can add your dog details. Moreover, you can search your dogs as per the categories. <br>
+In addition to that, you can find count of dogs according to gender and class wise</B> <br>
+</p>
+<div>
+  <img class="mySlides" src="d1s.jpg" width="1000px" height="500px" align="none" style="padding-left:10px">
+  <img class="mySlides" src="d2s.jpeg" width="1000px" height="500px" align="none" style="padding-left:10px">
+  <img class="mySlides" src="d3s.jpg" width="1000px" height="500px" align="none" style="padding-left:10px">
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000);    
+}
+</script>
+
+</center>
+
+<h4> <font color="white"> CopyRight @Malav Jani & Rutul Patel</h4>
+</body>
+</html>
